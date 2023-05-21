@@ -5,7 +5,6 @@ import { prisma } from "@/../globals/db";
 export const revalidate = 0;
 
 export default async function Page() {
-  throw new Promise(() => {});
   const data = await prisma.metadata.findUniqueOrThrow({
     where: { key: "tos" },
   });
