@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js App Directory Demo
 
-## Getting Started
+このリポジトリは Next.js を用いたディレクトリ構造のデモプロジェクトです。このプロジェクトは、Next.js と他の一部のライブラリを使用して、フロントエンド開発の一般的なパターンをデモンストレーションします。
 
-First, run the development server:
+## 技術スタック
+
+- Next.js
+- React
+- TypeScript
+- SWR
+- Axios
+- PostgreSQL
+- Prisma
+
+## セットアップ
+
+ローカルでこのプロジェクトを動かすための手順は以下の通りです：
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# リポジトリをクローンします。
+git clone https://github.com/s-hiraoku/nextjs-app-directory-demo.git
+
+# プロジェクトのディレクトリに移動します。
+cd nextjs-app-directory-demo
+
+# 依存関係をインストールします。
+pnpm install
+
+# データベースを初期化します。（PostgreSQLがローカルで動いている必要があります。）
+pnpm prisma migrate dev
+
+# デベロップメントサーバーを起動します。
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## プロジェクト構成
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+このプロジェクトは以下のようなディレクトリ構成になっています：
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `/pages`: Next.js のルートとなるページコンポーネントを配置します。
+- `/components`: 再利用可能な React コンポーネントを配置します。
+- `/contexts`: React の Context を定義します。グローバルなステート管理を行います。
+- `/hooks`: カスタムフックを配置します。データの取得や一部のロジックをカプセル化します。
+- `/lib`: ヘルパー関数や共通のユーティリティ関数を配置します。
+- `/styles`: グローバルスタイルや共通のスタイルコンポーネントを配置します。
+- `/types`: TypeScript の型定義を配置します。
 
-## Learn More
+## ライセンス
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+MIT
